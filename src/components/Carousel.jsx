@@ -1,0 +1,53 @@
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
+import Slide from './Slide'
+
+
+export default function Carousel() {
+  return (
+    <div className='container px-6 py-10 mx-auto'>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className='mySwiper'
+      >
+        <SwiperSlide>
+          <Slide
+            image='https://i.ibb.co/6m3gpMp/carousel1.jpg'
+            text='Get Your Web Development Projects Done in minutes'
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Slide
+            image='https://i.ibb.co/zfKrRLt/carousel2.jpg'
+            text='Get Your Graphics Design Projects Done in minutes'
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Slide
+            image='https://i.ibb.co/8Y6xs5C/carousel3.jpg'
+            text='Start Your Digital Marketing Campaigns up n running'
+          />
+        </SwiperSlide>
+      </Swiper>
+    </div>
+  )
+}
